@@ -1,0 +1,488 @@
+@charset "utf-8";
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+dl,
+dd,
+th,
+td,
+figure {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+img {
+  vertical-align: bottom;
+  width: 100%;
+  height: auto;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/*bold*/
+@font-face {
+  font-family: "myfont_bold";
+  src: url("../fonts/Poppins-Bold.ttf") format("truetype");
+}
+
+body {
+  font-family: 'Avenir','Helvetica Neue','Helvetica','Arial', 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro','メイリオ', 'Meiryo', '游ゴシック', 'Yu Gothic', 'ＭＳ Ｐゴシック', sans-serif;
+  color: #333;
+  font-size: 16px;
+  background-color: #fff;
+}
+
+.inner {
+  max-width: 960px;
+  margin: auto;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+}
+
+header {
+  line-height: 64px;
+  margin-top: 40px;
+  position: fixed;
+  z-index: 50;
+  width: 100%;
+  transition: color 0.4s ease-out;
+}
+
+.headerColorScroll {
+  margin-top: 0;
+  color: #333;
+  background-color: rgba(255, 255, 255, 0.7);
+  transition: color 0.4s ease-out;
+}
+
+span.headerColorScroll {
+  background-color: #333;
+}
+
+header h1 {
+  font-size: 2.25em;
+}
+
+nav {
+  display: none;
+  position: fixed;
+  /*ボタンと一緒に追従するように */
+  top: 7%;
+  right: 0;
+  width: 20%;
+  height: 100vh;
+  background-color: rgba(255, 255, 255, 0.7);
+  line-height: 6;
+  z-index: 99;
+  text-align: center;
+}
+
+nav li a {
+  display: block;
+  font-weight: bold;
+  color: #333;
+  text-decoration: none;
+}
+
+nav li a:hover {
+  color: #fff;
+  text-decoration: underline;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+nav li:first-of-type {
+  margin-top: 40px;
+}
+
+.openbtn {
+  display: block;
+  position: relative;
+  top: 22px;
+  cursor: pointer;
+  width: 32px;
+  height: 32px;
+  z-index: 100;
+}
+
+.openbtn span {
+  display: inline-block;
+  transition: all .4s;
+  position: absolute;
+  height: 1px;
+  background: #fff;
+  width: 100%;
+}
+
+
+.openbtn span:nth-of-type(1) {
+  top: 0;
+}
+
+.openbtn span:nth-of-type(2) {
+  top: 9px;
+}
+
+.openbtn span:nth-of-type(3) {
+  top: 18px;
+}
+
+.openbtn.active span:nth-of-type(1) {
+  top: 8px;
+  transform: translateY(6px) rotate(-45deg);
+  width: 100%;
+}
+
+.openbtn.active span:nth-of-type(2) {
+  opacity: 0;
+}
+
+.openbtn.active span:nth-of-type(3) {
+  top: 20px;
+  transform: translateY(-6px) rotate(45deg);
+  width: 100%;
+}
+
+span.headerColorScroll {
+  background-color: #333;
+}
+
+h1,
+h2 {
+  color: #fff;
+  font-weight: normal;
+}
+
+h3,
+h4 {
+  font-family: "myfont_bold", "Avenir", "Helvetica Neue", "Helvetica", "Arial", "Hiragino Sans", "ヒラギノ角ゴシック", YuGothic, "Yu Gothic", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+}
+
+.mv {
+  background: url(../images/header@2x.png);
+  width: 100%;
+  height: 620px;
+  background-size: cover;
+  position: relative;
+  margin-bottom: 80px;
+}
+
+.mv_catch {
+  position: absolute;
+  color: #fff;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 40;
+  text-align: center;
+}
+
+.mv_catch h2 {
+  font-size: 7.5em;
+  line-height: 1;
+}
+
+section h3,
+section>p {
+  text-align: center;
+}
+
+h3 {
+  font-size: 36px;
+  line-height: 51px;
+}
+
+h4 {
+  font-size: 24px;
+  line-height: 40px;
+}
+
+section h3::after {
+  content: "";
+  display: block;
+  height: 1px;
+  width: 40px;
+  background-color: #333;
+  margin: 24px auto 32px;
+}
+
+section>p {
+  line-height: 1.2;
+  margin-bottom: 40px;
+}
+
+.concept {
+  background: linear-gradient(#fff 67%, #ededed 33%);
+  padding-bottom: 100px;
+  margin-bottom: 80px;
+}
+
+.bg_concept {
+  background-image: url(../images/concept@2x.png);
+  max-width: 960px;
+  height: 400px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin: auto;
+  font-size: 0;
+  line-height: 0;
+  color: transparent;
+  background-position: center center;
+}
+
+.work .container {
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.work .box {
+  width: 420px;
+  margin-bottom: 80px;
+}
+
+.work .container .box:nth-of-type(2) {
+  margin-top: 120px;
+}
+
+.work .container .box:nth-of-type(3) {
+  position: absolute;
+  top: 640px;
+}
+
+.work .container .box:last-of-type {
+  margin-left: 540px;
+}
+
+.work .box figure {
+  margin-bottom: 16px;
+}
+
+.work .box p {
+  line-height: 28px;
+}
+
+.florist {
+  padding-top: 80px;
+  background: linear-gradient(180deg, #ededed 0%, #ededed 58%, #fff 58%, #fff 100%);
+}
+
+.florist .box {
+  width: 300px;
+  height: 340px;
+}
+
+.florist .box p {
+  line-height: 19px;
+}
+
+.info {
+  padding-top: 80px;
+  margin-bottom: 120px;
+}
+
+.info .flex {
+  justify-content: space-between;
+}
+
+.info .flex div {
+  font-size: 0;
+  line-height: 0;
+  color: transparent;
+  background-image: url(../images/shop_information@2x.png);
+  width: 480px;
+  height: 320px;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.info dl {
+  position: relative;
+  width: 432px;
+  padding: 32px 0 28px;
+}
+
+.info dl dt {
+  position: absolute;
+  margin-left: 40px;
+}
+
+.info dl dd {
+  margin: 0 0 12px 160px;
+  padding: 0 0 19px 16px;
+  border-left: 1px solid #ededed;
+}
+
+.contact {
+  background-image: url(../images/contact_us@2x.png);
+  height: 450px;
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding-top: 80px;
+}
+
+.contact p {
+  line-height: 19px;
+}
+
+.contact div {
+  width: 360px;
+  line-height: 80px;
+  margin: 0 auto;
+  background: #fff;
+  border: 1px solid #ededed;
+}
+
+.contact div a {
+  display: block;
+  font-size: 20px;
+  text-decoration: none;
+  color: #333;
+}
+
+.contact div a::before {
+  display: inline-block;
+  content: url(../images/mail_FILL0_wght400_GRAD0_opsz24.png);
+  width: 30px;
+  height: 20px;
+  margin: 0 24px 0 79px;
+  vertical-align: -5px;
+}
+
+.contact div:hover {
+  background: #ededed;
+  border: 1px solid #333;
+}
+
+footer {
+  line-height: 40px;
+  text-align: center;
+}
+
+@media screen and (max-width: 960px) {
+  .flex {
+    display: block;
+    padding: 0 10px;
+  }
+
+  header .flex {
+    display: flex;
+  }
+
+  nav {
+    width: 100vw;
+  }
+
+  .concept {
+    background: none;
+    padding: 0 10px 0 10px;
+    margin-bottom: 80px;
+  }
+
+  .bg_concept {
+    background-size: contain;
+    width: 100%;
+    height: 280px;
+  }
+
+  .work .box {
+    width: 100%;
+  }
+
+  .work .container {
+    position: unset
+  }
+
+  .work .container .box:nth-of-type(3) {
+    position: unset;
+    top: 0;
+  }
+
+  .work .container .box:last-of-type {
+    margin-left: 0;
+  }
+
+  .florist .box {
+    width: 100%;
+    height: auto;
+  }
+
+  .info .flex div {
+    width: auto;
+    height: 360px;
+    background-size: cover;
+  }
+
+  .info dl {
+    width: 100%;
+  }
+
+  .info dl dt {
+    margin-left: 16px;
+  }
+
+  .info dl dd {
+    margin: 0 0 12px 96px;
+  }
+}
+
+@media screen and (min-width: 641px) and (max-width: 960px) {
+  nav {
+    width: 50vw;
+  }
+
+  .florist .flex {
+    display: flex;
+  }
+
+  .florist .box {
+    width: 30%;
+  }
+
+  .work .container {
+    display: flex;
+    position: relative;
+  }
+
+  .work .box {
+    width: 45%;
+  }
+
+  .work .container .box:nth-of-type(3) {
+    position: absolute;
+    top: 640px;
+  }
+
+  .work .container .box:last-of-type {
+    margin-left: 55%;
+  }
+
+  .info .flex {
+    display: flex;
+    padding: 0 20px;
+  }
+
+  .info .flex div {
+    width: 45%;
+    height: auto;
+    background-size: contain;
+  }
+
+  .info dl {
+    width: 55%;
+    padding: 10px 0 28px;
+  }
+}
